@@ -1,0 +1,84 @@
+
+<html>
+	<head>
+		<title>Document</title>
+		<style>
+			h1{
+				font-family: Georgia, 'Times New Roman', Times, serif;
+			}
+			body{
+				padding-top: 35px;
+			}
+		</style>
+	</head>
+	<center><body>
+		<h1>Mi calculator</h1>
+		<input id="f_nb" type="text">
+		<select name="sign" id="sign">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input id="s_nb" type="text">
+		<input id="btn" type="submit" value="Try me!">
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			let $btn = $("#btn");
+			let $first_nb = $("#f_nb");
+			let $sing = $("#sign");
+			let $second_nb = $("#s_nb");
+			let result = 0;
+
+			setInterval(function()
+			{
+				alert("Please, use me...");
+			}, 30000);
+			$btn.click = function ()
+			{
+				if (isNaN(parseFloat($first_nb.val())) || isNaN(parseFloat($second_nb.val())) || parseFloat($first_nb.val()) < 0 || parseFloat($second_nb.val()) < 0)
+				{
+					alert("Error :(");
+					return;
+				}
+				switch ($sing.val())
+				{
+					case "+":
+						result = parseFloat($first_nb.val()) + parseFloat($second_nb.val());
+						break;
+					case "-":
+						result = parseFloat($first_nb.val()) - parseFloat($second_nb.val());
+						break;
+					case "*":
+						result = parseFloat($first_nb.val()) * parseFloat($second_nb.val());
+						break;
+					case "/":
+						if (parseFloat($second_nb.val()) == 0)
+						{
+							alert("It’s over 9000!");
+							console.log("It’s over 9000!");
+							return;
+						}
+						result = parseFloat($first_nb.val()) / parseFloat($second_nb.val());
+						break;
+					case "%":
+						if (parseFloat($second_nb.val()) == 0)
+						{
+							alert("It’s over 9000!");
+							console.log("It’s over 9000!");
+							return;
+						}
+						result = parseFloat($first_nb.val()) % parseFloat($second_nb.val());
+						break;
+					default:
+						alert("Error :(");
+						return;
+
+					alert(result);
+					console.log(result);
+				}
+			}
+		</script>
+	</body></center>
+</html>

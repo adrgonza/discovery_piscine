@@ -1,0 +1,48 @@
+h1 , h2{
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	text-align: center;
+}
+
+table{
+
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	text-align: center;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.contact{
+	color: lightgray;
+	background-color: black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.level{
+	color: lightgray;
+}
+
+.center, .redes{
+	padding-top: 20px;
+}
+
+.redes{
+	padding-bottom: 10px;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.img_login{
+	width: 400px;
+	height: auto;
+}
+
+.primera_imagen{
+	width: 25px;
+	height: auto;
+}
+
+.segunda_imagen{
+	width: 30px;
+	height: auto;
+}

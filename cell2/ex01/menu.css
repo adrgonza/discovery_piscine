@@ -1,0 +1,11 @@
+input[type="checkbox"] {
+	display: none;
+}
+
+ul{
+	display: none;
+}
+
+input[type="checkbox"]:hover ~ ul{
+	display: contents;
+}

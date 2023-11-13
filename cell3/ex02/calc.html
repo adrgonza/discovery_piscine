@@ -1,0 +1,86 @@
+
+<html>
+	<head>
+		<title>Document</title>
+		<style>
+			h1{
+				font-family: Georgia, 'Times New Roman', Times, serif;
+			}
+			body{
+				padding-top: 35px;
+			}
+		</style>
+	</head>
+	<center><body>
+		<h1>Mi calculator</h1>
+		<input id="f_nb" type="text">
+		<select name="sign" id="sign">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input id="s_nb" type="text">
+		<input id="btn" type="submit" value="Try me!">
+		<script>
+			let btn = document.querySelector("#btn");
+			let first_nb = document.querySelector("#f_nb");
+			let sing = document.querySelector("#sign");
+			let second_nb = document.querySelector("#s_nb");
+			let result = 0;
+
+			setInterval(function()
+			{
+				alert("Please, use me...");
+			}, 30000);
+			btn.onclick = function ()
+			{
+				if (isNaN(parseFloat(first_nb.value)) || isNaN(parseFloat(second_nb.value)))
+				{
+					alert("Error :(");
+					return;
+				}
+				if (parseFloat(first_nb.value) < 0 || parseFloat(second_nb.value) < 0)
+				{
+					alert("Error :(");
+					return;
+				}
+				if (sing.value == "+")
+				{
+					result = parseFloat(first_nb.value) + parseFloat(second_nb.value);
+				}
+				if (sing.value == "-")
+				{
+					result = parseFloat(first_nb.value) - parseFloat(second_nb.value);
+				}
+				if (sing.value == "*")
+				{
+					result = parseFloat(first_nb.value) * parseFloat(second_nb.value);
+				}
+				if (sing.value == "/")
+				{
+					if (parseFloat(second_nb.value) == 0)
+					{
+						alert("It’s over 9000!")
+						console.log("It’s over 9000!");
+						return;
+					}
+					result = parseFloat(first_nb.value) / parseFloat(second_nb.value);
+				}
+				if (sing.value == "%")
+				{
+					if (parseFloat(second_nb.value) == 0)
+					{
+						alert("It’s over 9000!")
+						console.log("It’s over 9000!");
+						return;
+					}
+					result = parseFloat(first_nb.value) % parseFloat(second_nb.value);
+				}
+				alert(result);
+				console.log(result);
+}
+		</script>
+	</body></center>
+</html>

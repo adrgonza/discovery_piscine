@@ -1,0 +1,10 @@
+table{
+	margin: auto;
+}
+
+td{
+	border: 2px solid black;
+	width: 400000000px;
+	height: 100px;
+	
+}

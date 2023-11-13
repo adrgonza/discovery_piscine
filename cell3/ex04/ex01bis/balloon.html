@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>Document</title>
+	<style>
+		body{
+			padding-top: 100px;
+		}
+		.glove{
+			height: 200px;
+			width: 200px;
+			background-color: red;
+			border-radius: 300px;
+		}
+	</style>
+</head>
+<body>
+	<center><div class="glove"></div></center>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		let glove = $(".glove");
+		let width = 200;
+		let height = 200;
+		let color = `rgb(255, 0, 0)`;
+
+		glove.click(function()
+		{
+			if (color == `rgb(255, 0, 0)`) color = `rgb(0, 255, 0)`;
+			else if (color == `rgb(0, 255, 0)`) color = `rgb(0, 0, 255)`;
+			else if (color == `rgb(0, 0, 255)`) color = `rgb(255, 0, 0)`;
+			glove.css("background-color", color);
+			glove.css("width", `${width += 10}px`);
+			glove.css("height", `${height += 10}px`);
+			if (width >= 420)
+			{
+				width = 200;
+				height = 200;
+				glove.css("width", "200px");
+				glove.css("height", "200px");
+			}
+		});
+		glove.mouseleave(function()
+		{
+			if (color == `rgb(255, 0, 0)`) color = `rgb(0, 0, 255)`;
+			else if (color == `rgb(0, 255, 0)`) color = `rgb(255, 0, 0)`;
+			else if (color == `rgb(0, 0, 255)`) color = `rgb(0, 255, 0)`;
+			glove.css("background-color", color);
+			if (width > 200)
+			{
+				width -= 5;
+				height -= 5;
+				glove.css("width", `${width}px`);
+				glove.css("height", `${height}px`);
+			}
+		});
+	</script>
+</body>
+</html>

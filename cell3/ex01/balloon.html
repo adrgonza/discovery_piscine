@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>Document</title>
+	<style>
+		body{
+			padding-top: 100px;
+		}
+		.glove{
+			height: 200px;
+			width: 200px;
+			background-color: red;
+			border-radius: 300px;
+		}
+	</style>
+</head>
+<body>
+	<center><div class="glove"></div></center>
+	<script>
+		let glove = document.querySelector(".glove");
+		let width = 200;
+		let height = 200;
+		let color = `rgb(255, 0, 0)`;
+
+		glove.onclick = function()
+		{
+			if (color == `rgb(255, 0, 0)`)
+				color = `rgb(0, 255, 0)`;
+			else if (color == `rgb(0, 255, 0)`)
+				color = `rgb(0, 0, 255)`;
+			else if (color == `rgb(0, 0, 255)`)
+				color = `rgb(255, 0, 0)`;
+			glove.style.backgroundColor  = color;
+			glove.style.width = `${width += 10}px`;
+			glove.style.height = `${height += 10}px`;
+			if (width >= 420)
+			{
+				width = 200;
+				height = 200;
+				glove.style.width = `200px`;
+				glove.style.height = `200px`;
+			}
+		}
+		glove.addEventListener("mouseleave", function()
+		{
+			if (color == `rgb(255, 0, 0)`)
+				color = `rgb(0, 0, 255)`;
+			else if (color == `rgb(0, 255, 0)`)
+				color = `rgb(255, 0, 0)`;
+			else if (color == `rgb(0, 0, 255)`)
+				color = `rgb(0, 255, 0)`;
+			glove.style.backgroundColor  = color;
+			if (width > 200)
+			{
+				width -= 5;
+				height -= 5;
+				glove.style.width = `${width}px`;
+				glove.style.height = `${height}px`;
+			}
+		});
+	</script>
+</body>
+</html>
